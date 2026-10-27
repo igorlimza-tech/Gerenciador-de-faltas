@@ -66,7 +66,7 @@ src/
 ```
 
 ### Tabelas utilizadas pelo sistema
-`usuarios`, `turma`, `matricula`, `grade`, `registros` e `presença`.
+`usuarios` (perfil ALUNO ou PROFESSOR), `turma`, `matricula`, `grade`, `registros` (chamadas por data) e `presença` (status de cada aluno em cada chamada). O script completo está em `database/schema.sql`.
 
 ---
 
@@ -79,7 +79,13 @@ src/
 - Eclipse IDE (recomendado)
 
 ### 2. Banco de dados
-Crie o banco `SISTEMADEFALTAS` no MySQL e as tabelas listadas acima. A conexão padrão é:
+O script com a estrutura completa do banco está em [`database/schema.sql`](database/schema.sql) (somente estrutura, sem dados). Para criar tudo:
+
+```bash
+mysql -u root -p < database/schema.sql
+```
+
+Ou, no MySQL Workbench: `File > Open SQL Script`, selecione o `schema.sql` e execute. O script cria o banco `sistemadefaltas` e as tabelas. A conexão padrão do sistema é:
 
 ```
 jdbc:mysql://localhost:3306/SISTEMADEFALTAS
